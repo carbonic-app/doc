@@ -1,7 +1,10 @@
 % This is a new document
-\documentclass{article}
+\documentclass[12pt]{article}
 
 % TODO: Modularize using \input, check out https://en.wikibooks.org/wiki/LaTeX/Modular_Documents
+
+% Use Helvetica, it's very similar to Arial
+\usepackage{helvet}
 
 % Links in table of contents
 \usepackage[hidelinks]{hyperref}
@@ -11,6 +14,9 @@
 
 % Fancy page options
 \usepackage{fancyhdr}
+
+% Fix \headheight warning (see https://tex.stackexchange.com/a/327298)
+\setlength{\headheight}{15pt}
 
 \usepackage[pdftex]{graphicx}
 \usepackage[utf8]{inputenc}
@@ -93,7 +99,7 @@
     \newcommand{\gnl}{\vspace{1em}\\}      % New line, but with a little extra space
 
 % Title
-\title{\vspace{32ex}\Huge\projectName\\\vspace{.5ex}\small Version \projectVersion\\\LARGE\myAssignment\vspace{4ex}}
+\title{\vspace{16ex}\Huge\projectName\\\vspace{.5ex}\small Version \projectVersion\\\LARGE\myAssignment\vspace{4ex}}
 \author{
     Prepared by:\\
     \begin{tabular}{ r c l }
