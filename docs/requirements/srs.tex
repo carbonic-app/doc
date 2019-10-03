@@ -1,288 +1,46 @@
-% This is a new document
+
 \documentclass[12pt]{article}
 
-% TODO: Modularize using \input, check out https://en.wikibooks.org/wiki/LaTeX/Modular_Documents
-
-% Use Helvetica, it's very similar to Arial
-\usepackage{helvet}
-
-% Links in table of contents
-\usepackage[hidelinks]{hyperref}
-
-% General page dimensions
-\usepackage[letterpaper, top=1in, bottom=1in, left=1in, right=1in]{geometry}
-
-% Fancy page options
-\usepackage{fancyhdr}
-
-% Fix \headheight warning (see https://tex.stackexchange.com/a/327298)
-\setlength{\headheight}{15pt}
-
-\usepackage[pdftex]{graphicx}
-\usepackage[utf8]{inputenc}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{wasysym}
-
-% Columns if needed
-\usepackage{multicol}
-
-% \begin{comment} environment
-\usepackage{comment}
-
-% Colors!
-\usepackage{color}
-
-% More options for tables
-\usepackage{array}
-
-% Code blocks and syntax highlighting
-\usepackage{listings}
-
-% Highlighting, \hl{texthere}
-\usepackage{soul}
-
-% Subfigures, subtables, etc
-\usepackage{subcaption}
-
-% Reference last page number
-\usepackage{lastpage}
-
-% Automate definitions, acronyms, and abbreviations
-\usepackage[acronym]{glossaries}
-\makenoidxglossaries
-% \makeglossaries didn't work, see link for details (search "noidx")
-% http://tug.ctan.org/tex-archive/macros/latex/contrib/glossaries/glossariesbegin.html
-
-% For special positioning of the WSU-V banner
-\usepackage{tikzpagenodes}
-
-% Drawing and graphs
-\usepackage{tikz}
-\usetikzlibrary{automata, positioning, arrows}
-\tikzset{initial text=$ $,
-         ->,
-         >=stealth',
-         node distance=2cm}
-
-
-
-% Custom commands
-\newcommand{\projectName}{CS320proj}
-\newcommand{\projectVersion}{0.1}
-\newcommand{\myClass}{CS 320}
-\newcommand{\myAssignment}{Software Requirements Specification}
-\newcommand{\myDate}{\today}
-\newcommand{\mySemester}{WSU-V Fall 2019}
-
-% People
-% Garrett
-    \newcommand{\gfname}{Garrett}
-    \newcommand{\glname}{Walter}
-    \newcommand{\gname}{\gfname\ \glname}
-    \newcommand{\gidnum}{11681610}
-    \newcommand{\gemail}{garrett.walter@wsu.edu}
-% Daniel
-    \newcommand{\dfname}{Daniel}
-    \newcommand{\dlname}{Lee}
-    \newcommand{\dname}{\dfname\ \dlname}
-    \newcommand{\didnum}{10101010}
-    \newcommand{\demail}{something@some.thing}
-
-% Convenient shortcuts
-    \newcommand{\gand}{\wedge}             % Logical 'and'
-    \newcommand{\gor}{\vee}                % Logical 'or'
-    \newcommand{\gnot}{\neg \hspace{.2em}} % Logical 'not'
-    \newcommand{\gpipe}{\hspace{.2em} \vert \hspace{.2em}} % Just doing | doesn't leave much space on either side
-    \newcommand{\gsum}{\sum\limits}        % Saving keystrokes
-    \newcommand{\gnl}{\vspace{1em}\\}      % New line, but with a little extra space
-
-% Title
-\title{\vspace{16ex}\Huge\projectName\\\vspace{.5ex}\small Version \projectVersion\\\LARGE\myAssignment\vspace{4ex}}
-\author{
-    Prepared by:\\
-    \begin{tabular}{ r c l }
-        \gname & \texttt{\#}\gidnum & \gemail \\
-        \dname & \texttt{\#}\didnum & \demail
-    \end{tabular}
-    \vspace{4ex}
-}
-\date{\mySemester\\This document compiled on \myDate}
-
-% Common page styling
-\pagestyle{fancy}
-\lhead{\emph{\myAssignment\ for \projectName}}
-\chead{}
-\rhead{Page \thepage}
-\rhead{Page \thepage\ of \pageref*{LastPage}}
-\lfoot{}
-\cfoot{} % Empty footer
-\rfoot{}
-
-% Line below header and above footer
-\renewcommand\headrulewidth{0.4pt}
-\renewcommand\footrulewidth{0pt}
-
-% Custom stuff for the first page
-\fancypagestyle{firstpage}{
-    \fancyhf{}
-    \renewcommand\headrulewidth{0.4pt}
-    \renewcommand\footrulewidth{0pt}
-}
-
-% Very visible TODO
-\newcommand{\todo}{{\LARGE\color{red}\textbf{TODO}}}
-
-% Colors for code syntax highlighting
-\definecolor{mygreen}{rgb}{0,0.6,0}
-\definecolor{mygray}{rgb}{0.5,0.5,0.5}
-\definecolor{mymauve}{rgb}{0.58,0,0.82}
-\lstset{ 
-    basicstyle=\ttfamily\footnotesize, % the size of the fonts that are used for the code
-    breakatwhitespace=false,           % sets if automatic breaks should only happen at whitespace
-    breaklines=true,                   % sets automatic line breaking
-    % titlepos=b,                      % sets the caption-position to bottom
-    commentstyle=\color{mygreen},      % comment style
-    deletekeywords={...},              % if you want to delete keywords from the given language
-    extendedchars=true,                % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-    frame=single,	                   % adds a frame around the code
-    keepspaces=true,                   % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
-    keywordstyle=\color{blue},         % keyword style
-    language=c,                        % the language of the code
-    morekeywords={*,...},              % if you want to add more keywords to the set
-    numbers=left,                      % where to put the line-numbers; possible values are (none, left, right)
-    numbersep=5pt,                     % how far the line-numbers are from the code
-    numberstyle=\tiny\color{mygray},   % the style that is used for the line-numbers
-    rulecolor=\color{black},           % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
-    showspaces=false,                  % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
-    showstringspaces=false,            % underline spaces within strings only
-    showtabs=false,                    % show tabs within strings adding particular underscores
-    stepnumber=1,                      % the step between two line-numbers. If it's 1, each line will be numbered
-    stringstyle=\color{mymauve},       % string literal style
-    tabsize=4,                         % sets default tabsize
-    title=\lstname,                    % show the filename of files included with \lstinputlisting; also try caption instead of title
-    backgroundcolor=\color{white}      % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
-}
-
-% Definitions, acronyms, and abbreviations
-\newglossaryentry{kubernetes}{
-    name=Kubernetes,
-    description={An open-source system for automating deployment, scaling, and management of containerized applications}
-}
-\newglossaryentry{digitalocean}{
-    name={Digital Ocean},
-    description={Cloud infrastructure services that help to deploy and scale applications.}
-}
-\newacronym{aws}{AWS}{Amazon Web Services}
-\newacronym{gcp}{GCP}{Google Cloud Platform}
-
-
+\usepackage{sty/srs_packages}
+\usepackage{sty/srs_custom}
+\usepackage{sty/srs_glossary}
+\usepackage{sty/srs_style}
 
 \begin{document}
+
 \pagenumbering{roman}
-
-\begin{titlepage}
-
-% Attempt at getting the WSU-V banner in the top left of title page
-% Based on: https://tex.stackexchange.com/a/386331
-% TODO: Next step is to take inspiration recreate the title on our own to
-%       avoid using the \maketitle command
-%       Based on: https://tex.stackexchange.com/a/324152
-% \begin{tikzpicture}[remember picture, overlay, shift={(current page.north west)}]
-%     \node[anchor=north west, xshift=1cm, yshift=-1cm]{\includegraphics[width=.5\textwidth]{images/WSU-V_Banner.png}};
-% \end{tikzpicture}
-
-\maketitle
-\thispagestyle{firstpage}
-\end{titlepage}
+\input{./tex/title.tex}
 
 \pagebreak
 \tableofcontents
-\pagebreak
 
+\pagebreak
 \pagenumbering{arabic}
-
-\section{Introduction}
-    \emph{Please provide a brief introduction to your project and a brief overview of what the reader will find in this section.}
-    \subsection{Document Purpose}
-        \emph{Identify the product whose software requirements are specified in this document, including the revision or release number. Describe the scope of the product that is covered by this SRS, particularly if this SRS describes only part of the system or a single subsystem.\gnl Write 1-2 paragraphs describing the purpose of this document as explained above.}
-    \subsection{Product Scope}
-        \emph{Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals.\gnl 1-2 paragraphs describing the scope of the product. Make sure to describe the benefits associated with the product.}
-    \subsection{Intended Audience and Document Overview}
-        \emph{Describe the different types of reader that the document is intended for, such as developers, project managers, marketing staff, users, testers, and documentation writers (In your case it would probably be the `client' and the professor). Describe what the rest of this SRS contains and how it is organized. Suggest a sequence for reading the document, beginning with the overview sections and proceeding through the sections that are most pertinent to each reader type.}
-    \subsection{Definitions, Acronyms, and Abbreviations}
-        \emph{Define all the terms necessary to properly interpret the SRS, including acronyms and abbreviations. You may wish to build a separate glossary that spans multiple projects or the entire organization, and just include terms specific to a single project in each SRS.\gnl Please provide a list of all abbreviations and acronyms used in this document sorted in alphabetical order.}
-        \gnl The glossary terms can be used as below:
-        \\\hspace*{10mm} We looked into hosting our \gls{kubernetes} services on \gls{aws}, \gls{gcp}, \gls{digitalocean}, and \dots \Gls{aws} turned out to be more expensive than \gls{digitalocean}, so \dots
-        \\ Then commands to print glossary and acronyms like so: 
-        \printnoidxglossary
-        \printnoidxglossary[type=acronym]
-        \printacronyms
-    \subsection{Document Conventions}
-        \emph{In general this document follows the IEEE formatting requirements. Use Arial font size 11, or 12 throughout the document for text. Use italics for comments. Document text should be single spaced and maintain the 1” margins found in this template. For Section and Subsection titles please follow the template.\gnl Describe any standards or typographical conventions that were followed when writing this SRS, such as fonts or highlighting that have special significance. Sometimes, it is useful to divide this section to several sections, e.g., Formatting Conventions, Naming Conventions, etc.}
-    \subsection{References and Acknowledgements}
-        \emph{List any other documents or Web addresses to which this SRS refers. These may include user interface style guides, contracts, standards, system requirements specifications, use case documents, or a vision and scope document.\gnl Use the standard IEEE citation guide for this section.}
-        % TODO: Automate citations according to IEEE format
+\input{./tex/intro.tex}
 
 \pagebreak
-\section{Overall Description}
-    \subsection{Product Perspective}
-        \emph{Describe the context and origin of the product being specified in this SRS. For example, state whether this product is a follow-on member of a product family, a replacement for certain existing systems, or a new, self-contained product. If the SRS defines a component of a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two. In this part, make sure to include a simple diagram that shows the major components of the overall system, subsystem interconnections, and external interface. In this section it is crucial that you will be creative and provide as much information as possible.\gnl Provide at least one paragraph describing product perspective. Provide a general diagram that will illustrate how your product interacts with the environment and in what context it is being used, i.e., context diagram.}
-    \subsection{Product Functionality}
-        \emph{Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high level summary is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or object class diagram, will be effective.\begin{enumerate}\item Provide a bulleted list of all the major functions of the system.\item (Optional) Provide a Data Flow Diagram of the system to show how these functions relate to each other. This is useful when there is a clear sequence for the functions being performed.\end{enumerate}}
-    \subsection{Users and Characteristics}
-        \emph{Identify the various users that you anticipate will use this product. Users may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience.\begin{enumerate}\item Describe the pertinent characteristics of each user. Certain requirements may pertain only to certain users.\item Distinguish the most important users for this product from those who are less important to satisfy.\end{enumerate}}
-    \subsection{Operating Environment}
-        \emph{Describe the environment in which the software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist. In this part, make sure to include a simple diagram that shows the major components of the overall system, subsystem interconnections, and external interface.\gnl As stated above, in at least one paragraph, describe the environment your system will have to operate in. Make sure to include the minimum platform requirements for your system.}
-    \subsection{Design and Implementation Constraints}
-        \emph{Describe any items or issues that will limit the options available to the developers. These might include: hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customer’s organization will be responsible for maintaining the delivered software).\gnl In this section you need to consider all of the information you gathered so far, analyze it and correctly identify relevant constraints.}
-    \subsection{User Documentation}
-        \emph{List the user documentation components (such as user manuals, on-line help, and tutorials) that will be delivered along with the software. Identify any known user documentation delivery formats or standards.\gnl You will not actually develop any user-manuals, but you need to describe what kind of manuals and what kind of help is needed for the software you will be developing. One paragraph should be sufficient for this section.}
-    \subsection{Assumptions and Dependencies}
-        \emph{List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project.\gnl Provide a short list of some major assumptions that might significantly affect your design. For example, you can assume that your client will have 1, 2 or at most 50 Automated Banking Machines. Every number has a significant effect on the design of your system.}
-\pagebreak
-
-\section{Specific Requirements}
-    \subsection{External Interface Requirements}
-        \subsubsection{User Interfaces}
-            \emph{Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., Cancel) that will appear on every screen, error message display standards, and so on. Define the software components for which a user interface is needed.\gnl The least you can do for this section is to describe in words the different User Interfaces and the different screens that will be available to the user. Optional: You may also provide an initial Graphical User Interface design (does not have to be final).}
-        \subsubsection{Hardware Interfaces}
-            \emph{Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware. You are not required to specify what protocols you will be using to communicate with the hardware, but it will be usually included in this part as well.\gnl Please provide a short description of the different hardware interfaces. If you will be using some special libraries to communicate with your software mention them here. In case you have more than one hardware interface divide this section into subsections.}
-        \subsubsection{Software Interfaces}
-            \emph{Describe the connections between this product and other specific software components (name and version), including databases, operating systems (Windows? Linux? Etc\dots), tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.\gnl The previous part illustrates some of the information you would usually include in this part of the SRS document. To make things simpler, you are only required to describe the specific interface with the operating system.}
-        \subsubsection{Communications Interfaces}
-            \emph{Describe the requirements associated with any communications functions required by this product, including e-mail, web browser, network server communications protocols, electronic forms, and so on. Define any pertinent message formatting. Identify any communication standards that will be used, such as FTP or HTTP. Specify any communication security or encryption issues, data transfer rates, and synchronization mechanisms.\gnl Do not go into too much detail, but provide 1-2 paragraphs were you will outline the major communication standards. For example, if you decide to use encryption there is no need to specify the exact encryption standards, but rather, specify the fact that the data will be encrypted and name what standards you consider using.}
-    \subsection{Functional Requirements}
-        \emph{Functional requirements capture the intended behavior of the system. This behavior may be expressed as services, tasks or functions the system is required to perform. This section is the direct continuation of section 2.2 where you have specified the general functional requirements. Here, you should list in detail the different product functions with specific explanations regarding every function.\gnl Break the functional requirements to several functional areas and divide this section into subsections accordingly. Provide a detailed list of all product operations related to these functional areas.}
-    \subsection{Behavior Requirements}
-        \subsubsection{Use Case View}
-            \emph{A use case defines a goal-oriented set of interactions between external actors and the system under consideration.\gnl Provide a use case diagram which shows the entire system and all possible actors. Do not include detailed use case descriptions (these will be needed when you will be working on the Test Plan), but make sure to include a short description of what every use-case is, who are the actors in your diagram.}
+\input{./tex/description.tex}
 
 \pagebreak
-\section{Other Non-functional Requirements}
-    \subsection{Performance Requirements}
-        \emph{If there are performance requirements for the product under various circumstances, state them here and explain their rationale, to help the developers understand the intent and make suitable design choices. Specify the timing relationships for real time systems. Make such requirements as specific as possible. You may need to state performance requirements for individual functional requirements or features.\gnl Provide relevant performance requirements based on the information you collected from the client. For example you can say “1. Any transaction will not take more than 10 seconds, etc\dots}
-    \subsection{Safety and Security Requirements}
-        \emph{Specify those requirements that are concerned with possible loss, damage, or harm that could result from the use of the product. Define any safeguards or actions that must be taken, as well as actions that must be prevented. Refer to any external policies or regulations that state safety issues that affect the product’s design or use. Define any safety certifications that must be satisfied. Specify any requirements regarding security or privacy issues surrounding use of the product or protection of the data used or created by the product. Define any user identity authentication requirements.\begin{itemize} \item Provide relevant safety requirements based on your interview with the client or, on your expectation for the product. \item Describe briefly what level of security is expected from this product by your client and provide a bulleted (or numbered) list of the major security requirements. \end{itemize}}
-    \subsection{Software Quality Attributes}
-        \emph{Specify any additional quality characteristics for the product that will be important to either the customers or the developers. Some to consider are: adaptability, availability, correctness, flexibility, interoperability, maintainability, portability, reliability, reusability, robustness, testability, and usability. Write these to be specific, quantitative, and verifiable when possible. At the least, clarify the relative preferences for various attributes, such as ease of use over ease of learning.\gnl Use subsections (e.g., 4.3.1 Reliability, 4.3.2 Portability, etc\dots) provide requirements related to the different software quality attributes. Base the information you include in these subsections on the material you have learned in the class. Make sure, that you do not just write “This software shall be maintainable…” Indicate how you plan to achieve it, etc.}
+\input{./tex/reqs-specific.tex}
 
 \pagebreak
-\section{Other Requirements}
-    \emph{This section is \textbf{Optional}. Define any other requirements not covered elsewhere in the SRS. This might include database requirements, internationalization requirements, legal requirements, reuse objectives for the project, and so on. Add any new sections that are pertinent to the project.}
+\input{./tex/reqs-nonfunctional.tex}
+
+\pagebreak
+\input{./tex/reqs-other.tex}
 
 \pagebreak
 % \pagenumbering{alph} % Causes issue with last page, like "Page 4 of a"
 % Possible workaround would be manually setting a reference to the last page
 %       before the appendix, and using that instead of \pageref*{LastPage}
 \appendix
-
-\section{Data Dictionary}
-    \emph{Data dictionary is used to track all the different variables, states and functional requirements that you described in your document. Make sure to include the complete list of all constants, state variables (and their possible states), inputs and outputs in a table. In the table, include the description of these items as well as all related operations and requirements.}
+\input{./tex/appendix-dictionary.tex}
 
 \pagebreak
-\section{Group Log}
-    \emph{Please include here all the minutes from your group meetings, your group activities, and any other relevant information that will assist the Teaching Assistant to determine the effort put forth to produce this document.}
+\input{./tex/appendix-log.tex}
+
+\pagebreak
+\input{./tex/bibliography.tex}
 
 \end{document}
