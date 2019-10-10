@@ -20,3 +20,4 @@
 
 # Just ignore .log files in docs folder
 **/docs/**/*.log
+docs/requirements/srs.pdf
