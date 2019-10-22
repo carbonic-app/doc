@@ -7,14 +7,17 @@
 \usepackage{sty/srs_style}
 
 \begin{document}
+\pagestyle{pre}
 
 \pagenumbering{roman}
 \input{./tex/title.tex}
 
 \pagebreak
 \tableofcontents
+\label{EndOfPre}
 
 \pagebreak
+\pagestyle{specs}
 \pagenumbering{arabic}
 \input{./tex/intro.tex}
 
@@ -29,11 +32,11 @@
 
 \pagebreak
 \input{./tex/reqs-other.tex}
+\label{EndOfSpecs}
 
 \pagebreak
-% \pagenumbering{alph} % Causes issue with last page, like "Page 4 of a"
-% Possible workaround would be manually setting a reference to the last page
-%       before the appendix, and using that instead of \pageref*{LastPage}
+\pagestyle{post}
+\pagenumbering{alph}
 \appendix
 \input{./tex/appendix-dictionary.tex}
 

@@ -12,15 +12,9 @@
 }
 \date{\mySemester\\This document compiled on \myDate}
 
-% Common page styling
-\pagestyle{fancy}
+% Default header/footer
+\fancyhf{}
 \lhead{\emph{\myAssignment\ for \projectName}}
-\chead{}
-\rhead{Page \thepage}
-\rhead{Page \thepage\ of \pageref*{LastPage}}
-\lfoot{}
-\cfoot{} % Empty footer
-\rfoot{}
 
 % Line below header and above footer
 \renewcommand\headrulewidth{0.4pt}
@@ -32,6 +26,11 @@
     \renewcommand\headrulewidth{0.4pt}
     \renewcommand\footrulewidth{0pt}
 }
+
+% Change "page _ of _" depending on section
+\fancypagestyle{specs}{\rhead{Page \thepage\ of \pageref*{EndOfSpecs}}}
+\fancypagestyle{pre}{\rhead{Page \thepage\ of \pageref*{EndOfPre}}}
+\fancypagestyle{post}{\rhead{Page \thepage\ of \pageref*{LastPage}}}
 
 % Colors for code syntax highlighting
 \definecolor{mygreen}{rgb}{0,0.6,0}
