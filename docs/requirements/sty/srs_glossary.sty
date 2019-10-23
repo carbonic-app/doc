@@ -1,0 +1,97 @@
+\ProvidesPackage{sty/srs_glossary}
+
+% https://en.wikibooks.org/wiki/LaTeX/Glossary
+
+% Basic usage:
+%   \gls{label}
+%   \Gls{capital}
+%   \glspl{plural}
+%   \Glspl{plurcap}
+
+\newglossaryentry{latex}{
+    name={LaTeX},
+    text={\LaTeX},
+    description={\href{https://www.latex-project.org/}{is a high-quality typesetting system; it includes features designed for the production of technical and scientific documentation}}
+}
+\newglossaryentry{kubernetes}{
+    name=Kubernetes,
+    description={\href{https://kubernetes.io/}{is an open-source system for automating deployment, scaling, and management of containerized applications}}
+}
+\newglossaryentry{go}{
+    name={Go},
+    description={\href{https://golang.org/}{is an open source programming language that makes it easy to build simple, reliable, and efficient software}}
+}
+\newglossaryentry{protobuf-def}{
+    name={Protocol Buffers},
+    description={\href{https://developers.google.com/protocol-buffers}{are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data}}
+}
+\newglossaryentry{grpc}{
+    name={gRPC},
+    description={\href{https://grpc.io/}{is a modern open source high performance \gls{rpc} framework}}
+}
+\newglossaryentry{uml-def}{
+    name={Unified Modeling Language},
+    description={\href{https://www.uml.org/}{is a general-purpose, developmental, modeling language in the field of software engineering that is intended to provide a standard way to visualize the design of a system}}
+}
+\newglossaryentry{ts-def}{
+    name={TypeScript},
+    description={\href{http://www.typescriptlang.org/}{is a typed superset of JavaScript that compiles to plain JavaScript}}
+}
+\newglossaryentry{tf-def}{
+    name={TensorFlow},
+    description={\href{https://www.tensorflow.org/}{is an end-to-end open source machine learning platform}}
+}
+\newglossaryentry{reldat}{
+    name={Relational Database},
+    description={\todo}
+}
+\newglossaryentry{gdrive}{
+    name={Google Drive},
+    description={\todo}
+}
+\newglossaryentry{oauth}{
+    name={OAuth 2.0},
+    description={\href{https://oauth.net/2/}{is an open protocol to allow secure authorization in a simple and standard method from web, mobile and desktop applications}}
+}
+% \newglossaryentry{}{
+%     name={},
+%     description={\href{}{}}
+%     % , text={} % Display differently in text than in glossary
+%     % , plural={} % Default plural appends an 's'
+% }
+
+% Basic usage:
+%   \gls{label}
+%   \glspl{plural}
+%   \acrlong{label}  -> Amazon Web Services
+%   \acrfull{label}  -> Amazon Web Services (AWS)
+%   \arcshort{label} -> AWS
+
+\newacronym{srs}{SRS}{Software Requirements Specification}
+\newacronym{aws}{AWS}{Amazon Web Services}
+\newacronym{gcp}{GCP}{Google Cloud Platform}
+\newacronym{rpc}{RPC}{Remote Procedure Call}
+\newacronym{gke}{GKE}{Google Kubernetes Engine}
+\newacronym{vcs}{VCS}{Version Control System}
+\newacronym{ieee}{IEEE}{Institute of Electrical and Electronics Engineers}
+\newacronym{gui}{GUI}{Graphical User Interface}
+\newacronym{uml}{UML}{\gls{uml-def}}
+\newacronym{js}{JS}{JavaScript}
+\newacronym{ts}{TS}{\gls{ts-def}}
+\newacronym{tf}{TF}{\gls{tf-def}}
+\newacronym{ssl}{SSL}{Secure Sockets Layer}
+\newacronym{tls}{TLS}{Transport Layer Security}
+\newacronym{http}{HTTP}{HyperText Transfer Protocol}
+\newacronym{https}{HTTPS}{Hypertext Transfer Protocol Secure}
+\newacronym{html}{HTML}{HyperText Markup Language}
+\newacronym{wasm}{Wasm}{WebAssembly}
+\newacronym{css}{CSS}{Cascading Style Sheets}
+\newacronym{sso}{SSO}{Single Sign-On}
+\newacronym{lstm}{LSTM}{Long Short-Term Memory}
+\newacronym{rnn}{RNN}{Recurrent Neural Network}
+\newacronym{ml}{ML}{Machine Learning}
+\newacronym{protobuf}{Protobuf}{Protocol Buffers}
+% \newacronym{}{}{}
+
+% Add all definitions regardless of if they've been used
+\glsaddall
