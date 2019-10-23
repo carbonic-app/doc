@@ -54,7 +54,8 @@
 \bibliography{references}
 
 % Automate definitions, acronyms, and abbreviations
-\usepackage[acronym]{glossaries}
+% `nonumberlist` is used here to remove the page number of references
+\usepackage[acronym, nonumberlist, section=subsubsection, numberedsection]{glossaries}
 \makenoidxglossaries
 % \makeglossaries didn't work, see link for details (search "noidx")
 % http://tug.ctan.org/tex-archive/macros/latex/contrib/glossaries/glossariesbegin.html
@@ -65,3 +66,7 @@
 % Drawing and graphs
 \usepackage{tikz}
 \usetikzlibrary{automata, positioning, arrows}
+
+% Ensure single-spaced lines
+\usepackage{setspace}
+\singlespacing
