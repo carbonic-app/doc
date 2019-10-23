@@ -17,6 +17,10 @@
 *.fls
 *.synctex.gz
 *.toc
+*.bbl
+*.bcf
+*.blg
+*.run.xml
 
 # Just ignore .log files in docs folder
 **/docs/**/*.log
