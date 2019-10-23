@@ -9,9 +9,9 @@ This project will use a branch merge only strategy onto master
 ### Branch Names
 
 Branch names should follow the following syntax
-
-`gwalter/feat/2.1/update-product-perspective`
-`dlee/bug/3.2/fix-requirement-typo`
+- `gwalter/doc/update-product-perspective`
+- `gwalter/bug/fix-slow-endpoint`
+- `dlee/feat/improve-proxy-service`
 
 ### Commit standard
 
