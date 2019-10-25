@@ -1,7 +1,10 @@
 \ProvidesPackage{sty/srs_packages}
 
-% Use Helvetica, it's very similar to Arial
-\usepackage{helvet}
+% Configure font
+\usepackage{arial}                        % load package which provides the font
+\renewcommand{\sfdefault}{ua1}            % set default serif font as Arial
+\renewcommand{\familydefault}{\sfdefault} % set the default font as serif, i.e., Arial
+\usepackage[T1]{fontenc}
 
 % Links in table of contents
 \usepackage[hidelinks]{hyperref}
