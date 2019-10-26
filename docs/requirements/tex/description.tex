@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 \section{Overall Description}\label{sec:overall-description}
     \subsection{Product Perspective}\label{sec:product-perspective}
         % \emph{Describe the context and origin of the product being specified in this SRS. For example, state whether this product is a follow-on member of a product family, a replacement for certain existing systems, or a new, self-contained product. If the SRS defines a component of a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two. In this part, make sure to include a simple diagram that shows the major components of the overall system, subsystem interconnections, and external interface. In this section it is crucial that you will be creative and provide as much information as possible.\gnl Provide at least one paragraph describing product perspective. Provide a general diagram that will illustrate how your product interacts with the environment and in what context it is being used, i.e., context diagram.}
@@ -14,7 +15,31 @@
             \item Memory constraints
         \end{itemize}
     \subsection{Product Functionality}\label{sec:product-functionality}
-        \emph{Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high level summary is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or object class diagram, will be effective.\begin{enumerate}\item Provide a bulleted list of all the major functions of the system.\item (Optional) Provide a Data Flow Diagram of the system to show how these functions relate to each other. This is useful when there is a clear sequence for the functions being performed.\end{enumerate}}
+        % \emph{Summarize the major functions the product must perform or must let the user perform. Details will be provided in Section 3, so only a high level summary is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or object class diagram, will be effective.\begin{enumerate}\item Provide a bulleted list of all the major functions of the system.\item (Optional) Provide a Data Flow Diagram of the system to show how these functions relate to each other. This is useful when there is a clear sequence for the functions being performed.\end{enumerate}}
+        \begin{itemize}
+            \item Administrative
+            \begin{itemize}
+                \item \textbf{Add/remove student}. 
+                \item \textbf{Add/remove instructor}. 
+                \item \textbf{Hierarchy of permissions between user groups}.
+            \end{itemize}
+            \item File-sharing
+            \begin{itemize}                
+                \item \textbf{Create and share file templates}.
+                \item \textbf{Share files with specific read/write permissions to other users}.
+            \end{itemize}
+            \item Communications
+            \begin{itemize}
+                \item \textbf{Ability to message other users}. \emph{As widespread as sending notice to all students of vacation time, or as specific as notifying a certain student of some new material}
+                \item \textbf{Default communications to parental units if student is adolescent}.
+                \item \textbf{Alerts of varying priority levels}. \emph{Examples include notifying all students of snow day, letting teachers know a student will be on vacation, school requesting an instructor for a certain instrument for a variety of time slots, teachers letting individual students know what to work on or sending additional resources.}
+            \end{itemize}
+            \item 3rd party integration
+            \begin{itemize}                
+                \item \textbf{Integration with popular calendars (Apple Calendar, Google Calendar, etc\dots)}. \emph{Instructors could set their available times, schools and students could see such times and request lessons then. Most lessons would be recurring weekly at the same time, optimize for that case.}
+            \end{itemize}
+            \item \textbf{}.
+        \end{itemize}
     \subsection{Users and Characteristics}\label{sec:users-characteristics}
         \emph{Identify the various users that you anticipate will use this product. Users may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience.\begin{enumerate}\item Describe the pertinent characteristics of each user. Certain requirements may pertain only to certain users.\item Distinguish the most important users for this product from those who are less important to satisfy.\end{enumerate}}
     \subsection{Operating Environment}\label{sec:operating-environment}
