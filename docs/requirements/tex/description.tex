@@ -1,5 +1,3 @@
-
-<<<<<<< HEAD
 \section{Overall Description}\label{sec:overall-description}
     \subsection{Product Perspective}\label{sec:product-perspective}
         % \emph{Describe the context and origin of the product being specified in this SRS. For example, state whether this product is a follow-on member of a product family, a replacement for certain existing systems, or a new, self-contained product. If the SRS defines a component of a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two. In this part, make sure to include a simple diagram that shows the major components of the overall system, subsystem interconnections, and external interface. In this section it is crucial that you will be creative and provide as much information as possible.\gnl Provide at least one paragraph describing product perspective. Provide a general diagram that will illustrate how your product interacts with the environment and in what context it is being used, i.e., context diagram.}
@@ -41,7 +39,14 @@
             \item \textbf{}.
         \end{itemize}
     \subsection{Users and Characteristics}\label{sec:users-characteristics}
-        \emph{Identify the various users that you anticipate will use this product. Users may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience.\begin{enumerate}\item Describe the pertinent characteristics of each user. Certain requirements may pertain only to certain users.\item Distinguish the most important users for this product from those who are less important to satisfy.\end{enumerate}}
+        % \emph{Identify the various users that you anticipate will use this product. Users may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience.\begin{enumerate}\item Describe the pertinent characteristics of each user. Certain requirements may pertain only to certain users.\item Distinguish the most important users for this product from those who are less important to satisfy.\end{enumerate}}
+        There are 3 main groups of users for \projectName:
+        \begin{enumerate}
+            \item \textbf{Music schools}. Music schools manage the instructors and students under their umbrella of operation. They have permissions to add/remove association with the other user types, as well as special operations regarding interactions between the user groups.
+            \item \textbf{Music instructors}. Instructors interact with their associated companies and students. The students can be private or managed by a music school. Instructors are primarily responsible for \glspl{lesson plan} and \glspl{practice-resource} for their students, and sharing such resources with schools or other teachers. Instructors are the primary intended client as they have the most to benefit from the product's functionalities.
+            \item \textbf{Music students}. Students have access to a history of their \glspl{lesson plan}, \glspl{practice-resource}, and communication with their associated instructor or school. 
+            % \item \textbf{Administrator of student account}. Possible administrators of student accounts would be parents/guardians of a young student. The parent can monitor their child's interactions and manage permissions \emph{(such as allowing the student to read messages but not send replies, or get notifications when the student does some activity)}.
+        \end{enumerate}
     \subsection{Operating Environment}\label{sec:operating-environment}
         \emph{Describe the environment in which the software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist. In this part, make sure to include a simple diagram that shows the major components of the overall system, subsystem interconnections, and external interface.\gnl As stated above, in at least one paragraph, describe the environment your system will have to operate in. Make sure to include the minimum platform requirements for your system.}
     \subsection{Design and Implementation Constraints}\label{sec:design-constraints}
