@@ -51,17 +51,21 @@
         \projectName\ will run in a \gls{kubernetes} cluster hosted on a cloud platform such as \gls{aws} or \gls{gcp}. The programs themselves will run as \gls{docker} containers. The compute nodes will need to be able to run several micro services and visibility plugin applications.
     \subsection{Design and Implementation Constraints}\label{sec:design-constraints}
         \emph{Describe any items or issues that will limit the options available to the developers. These might include: hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customer’s organization will be responsible for maintaining the delivered software).\gnl In this section you need to consider all of the information you gathered so far, analyze it and correctly identify relevant constraints.}
-        \subsubsection{Language Requirements}
+        \subsubsection{Language Requirements}\label{sec:language-requirements}
             The backend will be written primarily in \gls{go}. The frontend will utilize \acrshort{html}, \acrshort{css}, and \acrfull{ts}.
-        \subsubsection{Technology Stack}
+        \subsubsection{Technology Stack}\label{sec:technology-stack}
             \begin{itemize}
                 \item \gls{vue}
-                \item \gls{gcp}
+                \item \acrfull{gcp}
+                \item \acrfull{grpc}
+                \item \acrfull{protobuf}
+                % \item GraphQL
+                \item \acrfull{sql}
                 \item \gls{kubernetes}
                 \item \gls{docker}
                 \item GitHub
             \end{itemize}
-        \subsubsection{External Interfaces}
+        \subsubsection{External APIs}\label{sec:external-apis}
             \begin{itemize}
                 \item Google Calendar
                 % \item Jackrabbit Music
