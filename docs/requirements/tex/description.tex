@@ -37,7 +37,10 @@
         \end{enumerate}
     \subsection{Operating Environment}\label{sec:operating-environment}
         % \emph{Describe the environment in which the software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist. In this part, make sure to include a simple diagram that shows the major components of the overall system, subsystem interconnections, and external interface.\gnl As stated above, in at least one paragraph, describe the environment your system will have to operate in. Make sure to include the minimum platform requirements for your system.}
-        \projectName\ will run in a \gls{kubernetes} cluster hosted on a cloud platform such as \gls{aws} or \gls{gcp}. The programs themselves will run as \gls{docker} containers. The compute nodes will need to be able to run several micro services and visibility plugin applications.
+        \projectName\ will run in a \gls{kubernetes} cluster hosted on a cloud platform such as \gls{aws} or \gls{gcp}. The programs themselves will run as \gls{docker} containers. The compute nodes will need to be able to run several micro services and visibility plugin applications. The user will need to have a modern web browser capable of running \gls{js}. 
+        \begin{center}
+            \includegraphics[width=.7\textwidth]{images/Operating-Environment.png}
+        \end{center}
     \subsection{Design and Implementation Constraints}\label{sec:design-constraints}
         \emph{Describe any items or issues that will limit the options available to the developers. These might include: hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customer’s organization will be responsible for maintaining the delivered software).\gnl In this section you need to consider all of the information you gathered so far, analyze it and correctly identify relevant constraints.}
         \subsubsection{Language Requirements}\label{sec:language-requirements}
