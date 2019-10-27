@@ -40,6 +40,28 @@
         \projectName\ will run in a \gls{kubernetes} cluster hosted on a cloud platform such as \gls{aws} or \gls{gcp}. The programs themselves will run as \gls{docker} containers. The compute nodes will need to be able to run several micro services and visibility plugin applications.
     \subsection{Design and Implementation Constraints}\label{sec:design-constraints}
         \emph{Describe any items or issues that will limit the options available to the developers. These might include: hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customer’s organization will be responsible for maintaining the delivered software).\gnl In this section you need to consider all of the information you gathered so far, analyze it and correctly identify relevant constraints.}
+        \subsubsection{Language Requirements}\label{sec:language-requirements}
+            The backend will be written primarily in \gls{go}. The frontend will utilize \acrshort{html}, \acrshort{css}, and \acrfull{ts}.
+        \subsubsection{Technology Stack}\label{sec:technology-stack}
+            \begin{itemize}
+                \item \gls{vue}
+                \item \acrfull{gcp}
+                \item \gls{grpc}
+                \item \acrfull{protobuf}
+                % \item GraphQL
+                \item \acrfull{sql}
+                \item \gls{kubernetes}
+                \item \gls{docker}
+                % \item GitHub % CI/CD integration?
+            \end{itemize}
+        \subsubsection{External APIs}\label{sec:external-apis}
+            \begin{itemize}
+                \item Google Calendar
+                % \item Jackrabbit Music
+            \end{itemize}
+        \subsubsection{Development Environment}\label{sec:development-environment}
+            % \todo Mention cross-platform development compatibility, and being able to run the full stack locally with \gls{docker} for testing purposes.
+            \projectName\ should be developed with cross-platform development in mind to reach the widest audience of possible contributors. This flexibility is allowed by using the cross-platform languages and tools in the previous sections. \Gls{docker} in particular allows for great cross-platform capabilities by ensuring the environment is the same across machines.
     \subsection{User Documentation}\label{sec:user-documentation}
         % \emph{List the user documentation components (such as user manuals, on-line help, and tutorials) that will be delivered along with the software. Identify any known user documentation delivery formats or standards.\gnl You will not actually develop any user-manuals, but you need to describe what kind of manuals and what kind of help is needed for the software you will be developing. One paragraph should be sufficient for this section.}
         Along with the product, basic user manuals and guides will be provided. Text tutorials for common workflows and functionalities will be found on the site. To aid in creating a better user experience, there should also be a way for users to request new documentation or submit issue reports.
