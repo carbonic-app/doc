@@ -23,6 +23,5 @@
 *.blg
 *.run.xml
 
-# Just ignore .log files in docs folder
-**/docs/**/*.log
-docs/requirements/srs.pdf
+*.log
+requirements/srs.pdf

@@ -16,3 +16,15 @@ Branch names should follow the following syntax
 ### Commit standard
 
 TBD
+
+### URI to UI
+ - sso      .appname.com -> sso-ui
+ - learn    .appname.com -> learn-ui
+ - teach    .appname.com -> teach-ui
+ - manage   .appname.com -> manage-ui
+
+UI's will be served via static file server.
+
+### Services
+ - account service
+ - TBD
