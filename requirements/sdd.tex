@@ -7,7 +7,7 @@
 \usepackage{sty/srs_style}
 
 % Custom commands
-\renewcommand{\projectName}{Teach-App}
+\renewcommand{\projectName}{Carbonic}
 \renewcommand{\projectVersion}{1.0.0}
 \renewcommand{\myClass}{CS 320}
 \renewcommand{\myAssignment}{Software Design Document}
@@ -15,30 +15,33 @@
 \renewcommand{\mySemester}{WSU-V Fall 2019}
 
 \begin{document}
+\pagenumbering{roman}
 
 \begin{titlepage}
     \maketitle
     \thispagestyle{firstpage}
 \end{titlepage}
 
-\section{Activity Diagrams}
-    \subsection{Create/Join Class}
+\pagebreak
+\tableofcontents\label{toc}
+\pagebreak
+
+\pagestyle{specs}
+\pagenumbering{arabic}
+
+\section{Create/Join Class}
     \begin{center}\includegraphics[width=\textwidth]{images/CreateJoinClass.png}\end{center}
 
-    \subsection{Message User}
+\section{Message User}
     \begin{center}\includegraphics[width=\textwidth]{images/MessageUser.png}\end{center}
 
-\section{Structural Modeling}
-    \subsection{Overall Infrastructure}
-        \begin{center}\includegraphics[width=\textwidth]{images/hardware-diagram.png}\end{center}
+\section{Overall Infrastructure}
+    \begin{center}\includegraphics[width=\textwidth]{images/hardware-diagram.png}\end{center}
 
-    \subsection{Kubernetes Inter-Pod Communication}
-        \begin{center}\includegraphics[width=\textwidth]{images/pod-inter-coms.png}\end{center}
+\section{Kubernetes Inter-Pod Communication}
+    \begin{center}\includegraphics[width=\textwidth]{images/pod-inter-coms.png}\end{center}
 
-    \subsection{Database Design}
+\section{Database Design}
 
-\section{Behavioral Modeling}
-
-    \subsection{Overall Workflow}
-
+\label{EndOfSpecs}
 \end{document}
