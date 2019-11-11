@@ -1,4 +1,13 @@
-# cs320-project
+# Carbonic
+
+Carbonic is client management software with a primary user-base of music educators.
+
+This software is currently primarily in the research and design phase, with some exploration into prototyping.
+
+## Team Members
+
+- Daniel Lee
+- Garrett Walter
 
 ## Standards
 
@@ -13,9 +22,9 @@ Branch names should follow the following syntax
 - `gwalter/bug/fix-slow-endpoint`
 - `dlee/feat/improve-proxy-service`
 
-### Commit standard
+<!-- ### Commit standard -->
 
-TBD
+<!-- TBD -->
 
 ### URI to UI
  - sso      .appname.com -> sso-ui
@@ -25,6 +34,6 @@ TBD
 
 UI's will be served via static file server.
 
-### Services
- - account service
- - TBD
+<!-- ### Services
+ - Single Sign-On
+ -  -->
