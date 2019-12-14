@@ -1,11 +1,74 @@
 
 \section{Implementation}\label{sec:implementation}
     \subsection{Development Environment}
-        \emph{Describe dev environment you were using for the project. Programming languages, IDEs, tools, etc\dots}
+        The technology stack behind Carbonic comprises mainly of a Go backend, gRPC API, Vue frontend, and Docker/GKE hosting.
+
+        \subsubsection{Programming Languages}
+            \begin{itemize}
+                \item Go
+                \item Javascript
+            \end{itemize}
+
+        \subsubsection{Tools}
+            \begin{itemize}
+                \item gRPC
+                \item gRPC-Web
+                \item Envoy
+                \item Protobuf
+                \item Google Cloud Platform
+                \item Google Kubernetes Engine
+                \item Kubernetes
+                \item Istio
+                \item Cloud SQL
+                \item Vue
+                \item Vuetify
+                \item GORM
+                \item SQLite
+                \item MySQL
+                \item bcrypt
+                \item Docker
+                \item Docker Hub
+                \item LaTeX
+                \item Visual Studio Code
+                \item GitHub
+            \end{itemize}
 
     \subsection{Task Distribution}
-        \emph{For each team member, describe his/her main implementation tasks in this project. Describe how tasks are distributed among team members}
+        \subsubsection{Daniel}
+        \begin{itemize}
+            \item GitHub Organization administration
+            \item API design
+            \item Go gRPC server
+            \item Docker images for Go
+            \item Istio and GKE infrastructure
+        \end{itemize}
+
+        \subsubsection{Garrett}
+        \begin{itemize}
+            \item Integrate gRPC-Web and Vue
+            \item Password hashing
+            \item Go gRPC client for testing
+            \item Docker images for Envoy
+            \item Final report
+        \end{itemize}
 
     \subsection{Challenges}
         \emph{Describ the challenges in the implementation, and how you dealt with them}
 
+        \subsubsection{gRPC-Web}
+            gRPC-Web continues to give us lots of trouble to this day. The 
+
+            Something something envoy. Hosting with Docker in Windows and the CORS issues in the cloud.
+
+            Working in a windows environment, trying to virtualize. 
+
+            Need proxy to translate requests to gRPC-compatible. Issues with Envoy locally and in cloud.
+
+        \subsubsection{gRPC integration with Vue}
+        
+
+        \subsubsection{Other}
+            Spec/documentation. Lack of good documentation. Building a new API from scratch using relatively new technology with a lack of documentation and examples. 
+
+    service mesh called istio to secure container communication
+    
