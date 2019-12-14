@@ -53,22 +53,12 @@
         \end{itemize}
 
     \subsection{Challenges}
-        \emph{Describ the challenges in the implementation, and how you dealt with them}
-
         \subsubsection{gRPC-Web}
-            gRPC-Web continues to give us lots of trouble to this day. The 
-
-            Something something envoy. Hosting with Docker in Windows and the CORS issues in the cloud.
-
-            Working in a windows environment, trying to virtualize. 
-
-            Need proxy to translate requests to gRPC-compatible. Issues with Envoy locally and in cloud.
-
-        \subsubsection{gRPC integration with Vue}
+            There are several implementations of gRPC-Web (most notably on github at grpc/grpc-web and improbable-eng/grpc-web) that are used in very different ways, and the documentation/examples for both are lacking or outdated. This lead to lots of issues regarding connecting our frontend Vue app to the backend Go server. Running the Envoy proxy container did not work on Windows, nor did it on online without referencing several obscure blog posts.
+            
+            The bulk of the issue comes down to there not being a great way to translate HTTP requests into the gRPC format, since browsers can't yet take advantage of HTTP/2. The current solution is to run a proxy on client and server side that can translate between the two. However, online examples for Envoy use deprecated features and outdated documentation, which made development difficult.
         
 
-        \subsubsection{Other}
-            Spec/documentation. Lack of good documentation. Building a new API from scratch using relatively new technology with a lack of documentation and examples. 
-
-    service mesh called istio to secure container communication
+        \subsubsection{Lack of general documentation}
+            There is not much documentation on our project's tech stack, so almost all development was patched together from various guides and extensive trial-and-error. Documentation on gRPC and it's interaction with the technologies was distinctly lacking. For the most part, we were learning multiple new technologies and building our app from scratch by referencing segmented information.
     
